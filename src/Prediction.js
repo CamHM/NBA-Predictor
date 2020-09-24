@@ -11,7 +11,7 @@ const Prediction = () => {
         page: {
             display: 'flex',
             justifyContent: 'center',
-            padding: '0 50px',
+            padding: '0 20px',
         },
         container: {
             display: 'flex',
