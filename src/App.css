@@ -1,31 +1,28 @@
 .App {
   text-align: center;
+  background-color: #1F2123;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  max-width: 100vw;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +32,112 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Teams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90vw;
+  position: relative;
+  margin-top: 20vh;
+}
+
+.TeamCard {
+  max-width: 200px;
+  margin: 40px;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .5s ease-in;
+}
+
+.TeamCard:hover {
+  transform: scale(1.05);
+}
+
+.TeamWins {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.01);
+  border-radius: 10px;
+}
+
+.wins {
+  display: flex;
+  color: #5EBC00;
+  font-size: 15px;
+  margin: 0 5px;
+}
+
+.loss {
+  display: flex;
+  color: #FF3D13;
+  margin: 0 5px;
+  fill: #FF3D13;
+}
+
+.TeamName {
+  color: #E7F4DA;
+  padding: 5px 0;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  color: white;
+  top: 10vh;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.custom-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 30px 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 40vh;
+  overflow: auto;
+}
+
+.custom-card::-webkit-scrollbar {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+}
+
+.custom-table {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: gainsboro;
+}
+
+.custom-card::-webkit-scrollbar-thumb {
+  background: tomato;
+  border-radius: 4px;
+}
+
+.custom-card::-webkit-scrollbar-thumb:hover {
+  background: tomato;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card::-webkit-scrollbar-thumb:active {
+  background-color: #ac4d3c;
+}
+
+.statTitle {
+  color: #e6710b;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.statText {
+  color: gainsboro;
 }
