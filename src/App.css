@@ -158,3 +158,12 @@ body::-webkit-scrollbar {
 .mainButton:hover {
   transform: scale(1.01);
 }
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  color: white;
+  top: 2vh;
+  font-size: 50px;
+  font-weight: 300;
+}

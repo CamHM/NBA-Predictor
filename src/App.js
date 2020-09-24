@@ -39,6 +39,9 @@ function App() {
                     <div className="mainButton" onClick={navigate}>
                         Predicción de Temporada
                     </div>
+                    <div>
+                        <p className="subtitle">Temporada 2019-20</p>
+                    </div>
                     <div className="Teams">
                         {teams.map((t, i) => <TeamCard key={`team-${t.team}`} team={{...t, id: i}} onClick={handleTeam} />)}
                     </div>
