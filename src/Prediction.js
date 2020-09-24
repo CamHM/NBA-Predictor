@@ -10,10 +10,13 @@ const Prediction = () => {
     const style = {
         page: {
             display: 'flex',
+            justifyContent: 'center',
+            padding: '0 50px',
         },
         container: {
             display: 'flex',
             flexWrap: 'wrap',
+            justifyContent: 'center',
         },
         match: {
             marginTop: '15vh',
@@ -25,6 +28,7 @@ const Prediction = () => {
         stats: {
             marginTop: '15vh',
             width: '40%',
+            marginBottom: '20px',
         },
         sectionTitle: {
             color: '#FF3D13',
