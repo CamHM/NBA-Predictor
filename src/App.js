@@ -7,6 +7,7 @@ import {
 import logos from "./lgos.json";
 import MaterialIcon from "material-icons-react";
 import Team from "./Team";
+import Prediction from "./Prediction";
 import './App.css';
 import 'bulma/css/bulma.css';
 
@@ -26,16 +27,26 @@ function App() {
         history.push(`/${team.team}`);
     };
 
+    const navigate = () => {
+        history.push('/prediction');
+    };
+
     return (
         <div className="App">
             <Switch>
                 <Route exact path="/">
                     <p className="title">NBA Predictor</p>
+                    <div className="mainButton" onClick={navigate}>
+                        Predicción de Temporada
+                    </div>
                     <div className="Teams">
                         {teams.map((t, i) => <TeamCard key={`team-${t.team}`} team={{...t, id: i}} onClick={handleTeam} />)}
                     </div>
                 </Route>
-                <Route path={"/:team"}>
+                <Route exact path="/prediction">
+                    <Prediction />
+                </Route>
+                <Route exact path="/:team">
                     <Team team={team} />
                 </Route>
             </Switch>

@@ -5,7 +5,6 @@ import MaterialIcon from "material-icons-react";
 
 const Team = () => {
     const { team } = useParams();
-    let history = useHistory();
     const [seasonResults, setSeasonResult] = useState([]);
     const [players, setPlayers] = useState([]);
     const [percentageTeam, setPercentageTeam] = useState([]);
@@ -28,8 +27,6 @@ const Team = () => {
             .then(res => res.json())
             .then(data => setStatsTeam(data))
     }, [team]);
-
-    const navigate = () => history.push('/');
 
     const style = {
         page: {
@@ -109,9 +106,7 @@ const Team = () => {
 
     return (
         <div style={style.page}>
-            <div style={style.back} onClick={navigate}>
-                <MaterialIcon icon="arrow_back_ios" color="#FFF" size='large' />
-            </div>
+            <BackButton />
             <div style={style.header}>
                 <img src={logos[team]} alt="" width="60px" />
                 <p style={style.name}>{team}</p>
@@ -214,5 +209,23 @@ const Team = () => {
         </div>
     )
 };
+
+export const BackButton = () => {
+    let history = useHistory();
+    const style = {
+        position: 'absolute',
+        left: '3vw',
+        top: '5vh',
+        cursor: 'pointer',
+    };
+
+    const navigate = () => history.push('/');
+
+    return (
+        <div style={style} onClick={navigate}>
+            <MaterialIcon icon="arrow_back_ios" color="#FFF" size='large' />
+        </div>
+    )
+}
 
 export default Team;

@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   width: 90vw;
   position: relative;
-  margin-top: 20vh;
+  margin-top: 25vh;
 }
 
 .TeamCard {
@@ -87,15 +87,6 @@ body::-webkit-scrollbar {
   padding: 5px 0;
 }
 
-.title {
-  font-family: Arial, Helvetica, sans-serif;
-  position: absolute;
-  color: white;
-  top: 10vh;
-  font-size: 50px;
-  font-weight: 300;
-}
-
 .custom-card {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 10px 20px;
@@ -140,4 +131,30 @@ body::-webkit-scrollbar {
 
 .statText {
   color: gainsboro;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  color: white;
+  top: 10vh;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.mainButton {
+  background-color: #e6710b;
+  font-size: 20px;
+  position: absolute;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: antiquewhite;
+  box-shadow: 1px 1px 6px #e6710b;
+  cursor: pointer;
+  transition: all .4s ease-in ;
+  top: 18vh;
+}
+
+.mainButton:hover {
+  transform: scale(1.01);
 }
