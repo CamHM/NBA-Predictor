@@ -60,7 +60,7 @@ const Prediction = () => {
             <div style={style.stats}>
                 <h1 style={style.sectionTitle}>Resultados</h1>
                 <div style={style.statsGroup}>
-                    { result.sort((a, b) => (a.total_win > b.total_win) ? -1 : 1).map((r, i) => <PositionCard key={`position-${i}`} position={r} />) }
+                    { result.sort((a, b) => (a.total_win > b.total_win) ? -1 : 1).map((r, i) => <PositionCard key={`position-${i}`} position={r} place={i + 1} />) }
                 </div>
             </div>
         </div>
@@ -123,13 +123,13 @@ const MatchCard = ({ match }) => {
     )
 };
 
-const PositionCard = ({ position }) => {
+const PositionCard = ({ position, place }) => {
     const style = {
         card: {
             margin: '10px 5px',
             padding: '30px 30px 0 30px',
             display: 'flex',
-
+            alignItems: 'center',
         },
         logo: {
             width: '60px',
@@ -142,11 +142,16 @@ const PositionCard = ({ position }) => {
             justifyContent: 'center',
             alignItems: 'center',
             marginLeft: '20px',
+        },
+        place: {
+            color: 'white',
+            marginRight: '10px',
         }
     };
 
     return (
         <div style={style.card}>
+            <p style={style.place}>{place}. </p>
             <img src={logos[position.team]} alt={position.team} style={style.logo} />
             <div className="wins" style={style.text}>
                 <MaterialIcon icon="arrow_upward" color="#5EBC00" />
